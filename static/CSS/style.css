@@ -1,0 +1,393 @@
+/*
+    CORES E VARIÁVEIS GLOBAIS
+    #ff3c5f, #9340ff, #101128, #000000
+*/
+:root {
+    --cor-primaria: #ff3c5f; /* Vermelho/Rosa Elétrico */
+    --cor-secundaria: #9340ff; /* Roxo Neon (Acento) */
+    --cor-fundo-base: #000000;
+    --cor-fundo-destaque: #101128; /* Fundo Secundário (Ex: Cards) */
+    --cor-texto-claro: #f3f4f6; /* Quase branco */
+    --cor-texto-suave: #9ca3af; /* Cinza suave */
+}
+
+/* ---------------------------------------------------- */
+/* GERAL E LAYOUT */
+/* ---------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.bg-tech-gradient {
+    /* O gradiente escuro/tech */
+    background: linear-gradient(135deg, var(--cor-fundo-base) 0%, var(--cor-fundo-destaque) 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.cor-primaria-text {
+    color: var(--cor-primaria);
+}
+
+.cor-secundaria-text {
+    color: var(--cor-secundaria);
+}
+
+/* ---------------------------------------------------- */
+/* NAVEGAÇÃO (HEADER) */
+/* ---------------------------------------------------- */
+
+.header {
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Efeito "vidro" de fundo */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--cor-primaria);
+    transition: color 0.3s;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.menu-link:hover {
+    color: var(--cor-primaria);
+}
+
+/* ---------------------------------------------------- */
+/* SEÇÃO HERO */
+/* ---------------------------------------------------- */
+
+.secao-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 96px 0;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: var(--cor-secundaria);
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.hero-bio {
+    margin-top: 24px;
+    font-size: 20px;
+    color: var(--cor-texto-suave);
+}
+
+/* ---------------------------------------------------- */
+/* BOTÕES (Geral) */
+/* ---------------------------------------------------- */
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 32px;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-base);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    margin-top: 0;
+    padding: 10px 24px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+.btn-github, .btn-demo {
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.btn-github {
+    background-color: #333;
+    color: var(--cor-texto-claro);
+}
+
+.btn-github:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.btn-demo {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-base);
+}
+
+.btn-demo:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+}
+
+
+/* ---------------------------------------------------- */
+/* SEÇÕES PADRÃO E DIVISOR */
+/* ---------------------------------------------------- */
+
+.secao-padrao {
+    padding: 64px 0;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 48px;
+}
+
+.divisor {
+    border: none;
+    border-top: 2px solid rgba(147, 64, 255, 0.3); /* Roxo com transparência */
+    max-width: 900px;
+    margin: 48px auto;
+}
+
+/* ---------------------------------------------------- */
+/* HABILIDADES */
+/* ---------------------------------------------------- */
+
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+}
+
+.card-skill {
+    background-color: var(--cor-fundo-destaque);
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 60, 95, 0.3); /* Primária com transparência */
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(147, 64, 255, 0.2);
+}
+
+.card-skill:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: var(--cor-primaria);
+}
+
+.icone-skill {
+    font-size: 40px;
+    color: var(--cor-primaria);
+    margin-bottom: 8px;
+}
+
+.nome-skill {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+video{
+    width: 600px;
+    /* height: 200px; */
+}
+
+img{
+    width: 540px;
+}
+
+/* ---------------------------------------------------- */
+/* CODEFLOW */
+/* ---------------------------------------------------- */
+
+.titulo-codeflow {
+    margin-bottom: 24px;
+}
+
+.codeflow-texto {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 32px auto;
+    color: var(--cor-texto-suave);
+}
+
+/* ---------------------------------------------------- */
+/* PROJETOS */
+/* ---------------------------------------------------- */
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.card-projeto {
+    background-color: var(--cor-fundo-destaque);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(147, 64, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s;
+}
+
+.card-projeto:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-5px);
+}
+
+.projeto-media {
+    width: 100%;
+    height: 256px;
+    background-color: #0d0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-texto-suave);
+    font-size: 18px;
+}
+
+.projeto-info {
+    padding: 24px;
+}
+
+.projeto-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: 12px;
+}
+
+.projeto-descricao {
+    color: var(--cor-texto-suave);
+    margin-bottom: 16px;
+}
+
+.projeto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+.tag-python, .tag-django {
+    background-color: rgba(147, 64, 255, 0.3); /* Fundo roxo suave */
+    color: var(--cor-secundaria);
+}
+
+.tag-frontend {
+    background-color: rgba(255, 60, 95, 0.3); /* Fundo vermelho suave */
+    color: var(--cor-primaria);
+}
+
+.projeto-botoes {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+
+/* ---------------------------------------------------- */
+/* RODAPÉ */
+/* ---------------------------------------------------- */
+
+.footer {
+    margin-top: 80px;
+    padding: 32px 0;
+    text-align: center;
+    background-color: var(--cor-fundo-base);
+    border-top: 2px solid rgba(147, 64, 255, 0.5);
+    color: var(--cor-texto-suave);
+}
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES (Responsividade) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 60px;
+    }
+    
+    .menu {
+        /* Esconda o menu padrão em telas menores se quiser um menu sanduíche JS */
+        /* display: none; */ 
+    }
+    
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .habilidades-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
