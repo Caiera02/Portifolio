@@ -273,6 +273,114 @@ img{
     color: var(--cor-texto-suave);
 }
 
+/* Container Principal da Seção */
+.secao-software {
+    /* background-color: #f5f5f5; Um fundo levemente diferente para separar */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container-software {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Títulos */
+.titulo-software {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--cor-principal); 
+}
+
+.subtitulo-software {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--cor-primaria); /* Slogan em destaque */
+    margin-bottom: 40px;
+}
+
+.texto-introducao {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+/* Cards de Funcionalidades (Layout Flexbox) */
+.cards-funcionalidades {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px; /* Espaço entre os cards */
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Para responsividade em telas menores */
+}
+
+.card-funcionalidade {
+    flex: 1; /* Permite que os cards se expandam */
+    min-width: 280px; /* Largura mínima para evitar que fiquem muito apertados */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(174, 32, 202, 0.1);
+    transition: transform 0.3s ease;
+    color : var(--cor-primaria)
+}
+
+.card-funcionalidade:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-funcionalidade h4 {
+    font-size: 1.3rem;
+    color: var(--cor-principal, #004D40);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Ícones */
+.icone-funcionalidade {
+    font-size: 3rem;
+    color: var(--cor-primaria); /* Cor de destaque para os ícones */
+    margin-bottom: 10px;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.btn-principal-software {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--cor-secundaria-text, #FF7F50); /* Cor de destaque */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal-software:hover {
+    background-color: #e56d45; /* Um tom ligeiramente mais escuro */
+}
+
+/* Chamada Final */
+.chamada-final {
+    font-size: 1.1rem;
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Responsividade Básica */
+@media (max-width: 900px) {
+    .cards-funcionalidades {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-funcionalidade {
+        margin-bottom: 20px;
+    }
+}
+
 /* ---------------------------------------------------- */
 /* PROJETOS */
 /* ---------------------------------------------------- */
@@ -354,7 +462,129 @@ img{
     gap: 16px;
     margin-top: 16px;
 }
+/* ---------------------------------------------------- */
+/* BOTOM WHATS */
+/* ---------------------------------------------------- */
+.whatsapp-flutuante {
+    /* Fixa o elemento na tela */
+    position: fixed;
+    /* Posiciona no canto inferior esquerdo */
+    bottom: 25px;
+    right: 25px;
+    
+    /* Estilização Visual */
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: white;
+    font-size: 2.2rem; /* Tamanho do ícone */
+    width: 60px; /* Largura do círculo */
+    height: 60px; /* Altura do círculo */
+    line-height: 60px; /* Centraliza o ícone verticalmente */
+    text-align: center;
+    border-radius: 50%; /* Transforma o botão em um círculo perfeito */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    z-index: 1000; /* Garante que fique acima de todos os outros elementos */
+    text-decoration: none;
+    
+    /* Animação e Transição */
+    transition: transform 0.3s ease-in-out;
+}
 
+/* 2. Efeito no Hover (quando o mouse passa) */
+.whatsapp-flutuante:hover {
+    transform: scale(1.1); /* Faz o botão crescer ligeiramente */
+    background-color: #128C7E;
+}
+
+/* 3. (Opcional) Animação Pulsante para Chamar Atenção */
+@keyframes pulso-whats {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-flutuante {
+    /* Aplica a animação para que o botão "pulse" */
+    animation: pulso-whats 2s infinite; 
+}
+
+/* Responsividade (Para não atrapalhar em telas muito pequenas) */
+@media (max-width: 500px) {
+    .whatsapp-flutuante {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.8rem;
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* CONTATO */
+/* ---------------------------------------------------- */
+
+/* Container dos Links Diretos */
+.contato-direto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Aumentei o espaçamento entre os botões */
+    margin-bottom: 30px;
+}
+
+.link-contato {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 30px; /* Aumentei o padding para deixar mais robusto */
+    
+    /* Borda Arredondada Suave */
+    border-radius: 50px; /* Deixa bem arredondado (estilo pílula) */
+    
+    font-weight: 700; /* Mais destaque na fonte */
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; /* Transição suave para todos os efeitos */
+    min-width: 280px;
+    justify-content: center;
+    
+    /* Efeito de Sombra (Profundidade) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.link-contato i {
+    margin-right: 12px;
+    font-size: 1.3rem; /* Ícone um pouco maior */
+}
+
+/* Estilo específico para o WhatsApp */
+.link-contato.whatsapp {
+    background-color: #25D366; 
+    color: white;
+}
+
+.link-contato.whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.05); /* Efeito de crescimento sutil */
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6); /* Sombra mais intensa no hover */
+}
+
+/* Estilo específico para o E-mail */
+.link-contato.email {
+    /* Use uma cor que contraste com o fundo, mas que combine com sua marca */
+    background-color: var(--cor-secundaria-text, #FF7F50); 
+    color: white;
+}
+
+.link-contato.email:hover {
+    background-color: #e56d45;
+    transform: scale(1.05); /* Efeito de crescimento sutil */
+    box-shadow: 0 6px 15px rgba(255, 127, 80, 0.6); /* Sombra mais intensa no hover */
+}
 
 /* ---------------------------------------------------- */
 /* RODAPÉ */
